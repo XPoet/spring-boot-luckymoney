@@ -12,3 +12,10 @@
 ## 使用 Maven 打包项目
 命令：`mvn clean package`，打包成功后，会在当前项目目录下，生成新的文件夹target,
 使用Java命令：`java -jar xxxx.jar`，即可启动该项目。
+
+## 在已打包好的项目使用不同的配置文件
+- 使用 prod 配置文件
+`$ java -jar -Dspring.profiles.active=prod xxxxx.jar`
+
+- 使用 dev 配置文件
+`$ java -jar -Dspring.profiles.active=dev xxxxx.jar`
