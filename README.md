@@ -1,16 +1,14 @@
-# Getting Started
+# Spring Boot 简单练手项目
 
-### Reference Documentation
-For further reference, please consider the following sections:
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.2.3.RELEASE/maven-plugin/)
-* [Spring Web](https://docs.spring.io/spring-boot/docs/2.2.3.RELEASE/reference/htmlsingle/#boot-features-developing-web-applications)
+## 修改 Maven 默认的下载地址
+修改 ~/.m2/ 文件下面的 settings.xml 文件，将其替换成 settings.ali.xml 里面的内容，即使用阿里镜像。  
 
-### Guides
-The following guides illustrate how to use some features concretely:
+**目录说明：assets文件夹是跟项目代码无关的文件夹，存放一些静态资源**  
 
-* [Building a RESTful Web Service](https://spring.io/guides/gs/rest-service/)
-* [Serving Web Content with Spring MVC](https://spring.io/guides/gs/serving-web-content/)
-* [Building REST services with Spring](https://spring.io/guides/tutorials/bookmarks/)
+## 使用 Maven 启动 Spring Boot 的方法
+进入到 Spring Boot 项目目录下，使用命令：`mvn spring-boot:run`
 
+## 使用 Maven 打包项目
+命令：`mvn clean package`，打包成功后，会在当前项目目录下，生成新的文件夹target,
+使用Java命令：`java -jar xxxx.jar`，即可启动该项目。
