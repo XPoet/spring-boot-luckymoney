@@ -20,8 +20,26 @@
 - 使用 dev 配置文件
 `$ java -jar -Dspring.profiles.active=dev xxxxx.jar`
 
-## 在Maven使用依赖spring-boot-starter-thymeleaf，即可返回模板内容
+## 在Maven安装依赖spring-boot-starter-thymeleaf，即可在Controller返回模板内容
 第一步：Maven安装 spring-boot-starter-thymeleaf 
 第二步：在 templates 文件夹下新建HTML文件
 第三步：HelloController 使用 @Controller 注解
 第四步：接口返回HTML文件`return "index""`
+
+## 连接和操作MySQL数据库
+Maven安装 mysql-connector-java 和 spring-boot-starter-data-jpa 依赖
+配置文件里添加
+```yaml
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/luckymoney
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+```
+
+
