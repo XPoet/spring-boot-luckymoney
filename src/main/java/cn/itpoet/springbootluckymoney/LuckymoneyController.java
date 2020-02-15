@@ -10,8 +10,13 @@ import java.util.Optional;
 @RestController
 public class LuckymoneyController {
 
+    // 表示需要调用 LuckymoneyRepository
     @Autowired
     private LuckymoneyRepository repository;
+
+    // 表示需要调用 LuckymoneyService
+    @Autowired
+    private LuckymoneyService luckymoneyService;
 
     /**
      * 获取红包列表
@@ -62,6 +67,11 @@ public class LuckymoneyController {
             return repository.save(luckymoney);
         }
         return null;
+    }
+
+    @PostMapping("/create-two-luckymoney")
+    public void createTwoLuckymoney() {
+        luckymoneyService.createTwoLuckymoney();
     }
 
 

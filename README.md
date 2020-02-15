@@ -41,5 +41,9 @@ spring:
     password: 123456
     driver-class-name: com.mysql.cj.jdbc.Driver
 ```
+## 事务
+事务，特指数据库事务，要么都成功执行，要么都失败，只需加上 @Transactional注解
+并且在数据库中将数据库引擎设置为 InnoDB
+
 
 
