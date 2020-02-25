@@ -1,5 +1,7 @@
 # Spring Boot 简单练手项目
 
+## 使用IDEA快速搭建一个Spring Boot项目
+查看图片 `assets/spring-boot-init.png`
 
 ## 修改 Maven 默认的下载地址
 修改 ~/.m2/ 文件下面的 settings.xml 文件，将其替换成 settings.ali.xml 里面的内容，即使用阿里镜像。  
@@ -45,5 +47,33 @@ spring:
 事务，特指数据库事务，要么都成功执行，要么都失败，只需加上 @Transactional注解
 并且在数据库中将数据库引擎设置为 InnoDB
 
-
-
+## 热部署
+热启动需要在一开始就引入组件：spring-boot-devtools。
+它是 Spring Boot 提供的一组开发工具包，其中就包含我们需要的热部署功能，在使用这个功能之前还需要再做一些配置。
+添加依赖
+在 pom.xml 文件中添加 spring-boot-devtools 组件。
+```xml
+<dependency>
+  <groupId>org.springframework.boot</groupId>
+  <artifactId>spring-boot-Devtools</artifactId>
+  <optional>true</optional>
+</dependency>
+```
+在 plugin 中配置另外一个属性 fork，并且配置为 true。
+```xml
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-maven-plugin</artifactId>
+            <configuration>
+                <fork>true</fork>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+```
+配置 IDEA
+1. 选择 File | Settings | Compiler 命令，然后勾选 Build project automatically 复选框。
+2. 使用快捷键 Ctrl（command） + Shift + A，
+在输入框中输入 Registry，勾选 compile.automake.allow.when.app.running 复选框。

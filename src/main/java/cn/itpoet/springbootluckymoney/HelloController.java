@@ -86,4 +86,13 @@ public class HelloController {
     public String say7(@RequestParam(value = "id", required = false, defaultValue = "0") Integer id) {
         return "使用POST请求，URL传递过来的参数：" + id;
     }
+
+    /**
+     * 传入参数
+     * http://localhost:8888/luckymoney/hello/say8?name="猪八戒"
+     */
+    @RequestMapping("/say8")
+    public String say8(String name) {
+        return "hi " + name;
+    }
 }
